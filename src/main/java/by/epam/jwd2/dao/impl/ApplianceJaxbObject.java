@@ -1,7 +1,6 @@
 package by.epam.jwd2.dao.impl;
 
 import by.epam.jwd2.entity.*;
-
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
