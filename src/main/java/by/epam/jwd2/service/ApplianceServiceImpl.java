@@ -4,7 +4,6 @@ import by.epam.jwd2.dao.ApplianceDAO;
 import by.epam.jwd2.dao.impl.XMLApplianceDAO;
 import by.epam.jwd2.entity.Appliance;
 import by.epam.jwd2.entity.Criteria;
-
 import java.util.List;
 
 
