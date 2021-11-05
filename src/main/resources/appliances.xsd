@@ -83,7 +83,26 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VacuumCleaners" />
+        <xs:element name="VacuumCleaners">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="VacuumCleaner">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="height" type="xs:decimal" />
+                    <xs:element name="width" type="xs:decimal" />
+                    <xs:element name="length" type="xs:decimal" />
+                    <xs:element name="weight" type="xs:decimal" />
+                    <xs:element name="powerConsumption" type="xs:decimal" />
+                    <xs:element name="bagType" type="xs:string" />
+                    <xs:element name="filterType" type="xs:string" />
+                    <xs:element name="motorSpeed" type="xs:unsignedShort" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
