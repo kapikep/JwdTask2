@@ -20,7 +20,6 @@ public class ApplianceXmlParser {
     public static ApplianceJaxbObject parseXML() {
 
         try {
-
             context = JAXBContext.newInstance(ApplianceJaxbObject.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
 
