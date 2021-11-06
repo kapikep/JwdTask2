@@ -16,7 +16,7 @@ public class Validator {
         double valueDouble = 0.0;
         boolean validateValue;
 
-        if (params.size() == 0) {
+        if (params.isEmpty()) {
             return false;
         } else if (params.size() == 1 && params.get(0).equals("")) {
             return false;
