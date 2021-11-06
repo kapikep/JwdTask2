@@ -11,7 +11,7 @@ import java.io.File;
  */
 public class ApplianceXmlParser {
 
-    final static File fileXML = new File("src/main/resources/appliances.xml");
+    final static File fileXML = new File("src/main/resources/appliances.xml"); //Maven project
     private static JAXBContext context;
 
     /**
