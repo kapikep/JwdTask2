@@ -36,7 +36,7 @@ class ApplianceJaxbObject {
     }
 
     public List<Appliance> getApplianceList() {
-        if (applianceList.size() == 0) {
+        if (applianceList.isEmpty()) {
             applianceList.addAll(refrigerators);
             applianceList.addAll(speakers);
             applianceList.addAll(laptops);
