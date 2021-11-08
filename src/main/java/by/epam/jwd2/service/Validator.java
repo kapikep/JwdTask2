@@ -12,10 +12,11 @@ public class Validator {
     public static boolean validate(Criteria criteria) {
 
         List<String> params = criteria.getParams();
-        String param;
-        String value;
+        String param = "";
+        String value = "";
         double valueDouble = 0.0;
         boolean validateValue;
+
 
         if (params.isEmpty()) {
             return false;
@@ -27,8 +28,10 @@ public class Validator {
 
             String s = params.get(i);
 
-            param = s.substring(0, s.indexOf("="));
-            value = s.substring(s.indexOf("=") + 1);
+            if (s.contains("=")) {
+                param = s.substring(0, s.indexOf("="));
+                value = s.substring(s.indexOf("=") + 1);
+            }
 
             try {
                 valueDouble = Double.parseDouble(value);
@@ -50,10 +53,48 @@ public class Validator {
                     validateValue = validateOven(param, valueDouble);
                     break;
                 default:
-                    validateValue = validateAppliance(param, valueDouble);
+                    validateValue = validateAppliance(param, valueDouble);  //if the name is empty, search for all devices
                     break;
             }
-            return validateValue;
+
+            if (!validateValue) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean validateRefrigerator(String param, Double valueDouble) {
+
+        switch (param) {
+            case "height":
+            case "width":
+            case "length":
+                if (valueDouble <= 0 || valueDouble > 10000) {
+                    return false;
+                }
+                break;
+
+            case "weight":
+                if (valueDouble <= 0 || valueDouble > 100000) {
+                    return false;
+                }
+                break;
+
+            case "powerConsumption":
+                if (valueDouble <= 0 || valueDouble > 10000) {
+                    return false;
+                }
+                break;
+
+            case "freezerCapacity":
+            case "overallCapacity":
+                if (valueDouble <= 0 || valueDouble > 100) {
+                    return false;
+                }
+                break;
+            default:
+                return false;
         }
         return true;
     }
@@ -104,7 +145,6 @@ public class Validator {
         }
         return true;
     }
-
 
     private static boolean validateLaptop(String param, Double valueDouble) {
 
@@ -171,42 +211,6 @@ public class Validator {
         return true;
     }
 
-    private static boolean validateRefrigerator(String param, Double valueDouble) {
-
-        switch (param) {
-            case "height":
-            case "width":
-            case "length":
-                if (valueDouble <= 0 || valueDouble > 10000) {
-                    return false;
-                }
-                break;
-
-            case "weight":
-                if (valueDouble <= 0 || valueDouble > 100000) {
-                    return false;
-                }
-                break;
-
-            case "powerConsumption":
-                if (valueDouble <= 0 || valueDouble > 10000) {
-                    return false;
-                }
-                break;
-
-            case "freezerCapacity":
-            case "overallCapacity":
-                if (valueDouble <= 0 || valueDouble > 100) {
-                    return false;
-                }
-                break;
-            default:
-                return false;
-        }
-        return true;
-    }
-
-
     private static boolean validateAppliance(String param, Double valueDouble) {
 
         switch (param) {
@@ -222,6 +226,14 @@ public class Validator {
                     return false;
                 }
                 break;
+
+            case "powerConsumption":
+                if (valueDouble <= 0 || valueDouble > 100) {
+                    return false;
+                }
+                break;
+            default:
+                return false;
         }
         return true;
     }

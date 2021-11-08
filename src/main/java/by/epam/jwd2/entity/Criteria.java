@@ -10,8 +10,8 @@ public class Criteria {
 
     private List<String> params = new ArrayList<>();
 
-    public Criteria(String nameAppliance) {
-        params.add(nameAppliance);
+    public Criteria(String applianceName) {
+        params.add(applianceName);
     }
 
     /**
@@ -34,5 +34,4 @@ public class Criteria {
     public List<String> getParams() {
         return params;
     }
-
 }
