@@ -29,7 +29,7 @@ class ApplianceJaxbObject {
     @XmlElement(name = "Oven")
     private List<Oven> ovens = new ArrayList<>();
     @XmlElementWrapper(name = "VacuumCleaners")
-    @XmlElement(name = "VacuumCleaner ")
+    @XmlElement(name = "VacuumCleaner")
     private List<VacuumCleaner> vacuumCleaners = new ArrayList<>();
 
     ApplianceJaxbObject() {

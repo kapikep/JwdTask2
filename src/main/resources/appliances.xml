@@ -91,6 +91,33 @@
             <freezerCapacity>10.0</freezerCapacity>
             <overallCapacity>30.0</overallCapacity>
         </Refrigerator>
+        <Refrigerator>
+            <height>200.0</height>
+            <width>70.0</width>
+            <length>10.0</length>
+            <weight>20.0</weight>
+            <powerConsumption>100.0</powerConsumption>
+            <freezerCapacity>10.0</freezerCapacity>
+            <overallCapacity>30.0</overallCapacity>
+        </Refrigerator>
+        <Refrigerator>
+            <height>200.0</height>
+            <width>70.0</width>
+            <length>10.0</length>
+            <weight>20.0</weight>
+            <powerConsumption>100.0</powerConsumption>
+            <freezerCapacity>10.0</freezerCapacity>
+            <overallCapacity>30.0</overallCapacity>
+        </Refrigerator>
+        <Refrigerator>
+            <height>200.0</height>
+            <width>70.0</width>
+            <length>10.0</length>
+            <weight>20.0</weight>
+            <powerConsumption>100.0</powerConsumption>
+            <freezerCapacity>10.0</freezerCapacity>
+            <overallCapacity>30.0</overallCapacity>
+        </Refrigerator>
     </Refrigerators>
     <Speakers>
         <Speaker>
@@ -295,7 +322,7 @@
         </Oven>
     </Ovens>
     <VacuumCleaners>
-        <VacuumCleaner >
+        <VacuumCleaner>
             <height>10.0</height>
             <width>15.0</width>
             <length>22.0</length>
@@ -304,8 +331,8 @@
             <bagType>B</bagType>
             <filterType>C</filterType>
             <motorSpeed>2000</motorSpeed>
-        </VacuumCleaner >
-        <VacuumCleaner >
+        </VacuumCleaner>
+        <VacuumCleaner>
             <height>10.0</height>
             <width>15.0</width>
             <length>22.0</length>
@@ -314,8 +341,8 @@
             <bagType>B</bagType>
             <filterType>C</filterType>
             <motorSpeed>2000</motorSpeed>
-        </VacuumCleaner >
-        <VacuumCleaner >
+        </VacuumCleaner>
+        <VacuumCleaner>
             <height>10.0</height>
             <width>15.0</width>
             <length>22.0</length>
@@ -324,8 +351,8 @@
             <bagType>B</bagType>
             <filterType>C</filterType>
             <motorSpeed>2000</motorSpeed>
-        </VacuumCleaner >
-        <VacuumCleaner >
+        </VacuumCleaner>
+        <VacuumCleaner>
             <height>10.0</height>
             <width>15.0</width>
             <length>22.0</length>
@@ -334,6 +361,6 @@
             <bagType>B</bagType>
             <filterType>C</filterType>
             <motorSpeed>2000</motorSpeed>
-        </VacuumCleaner >
+        </VacuumCleaner>
     </VacuumCleaners>
 </applianceJaxbObject>

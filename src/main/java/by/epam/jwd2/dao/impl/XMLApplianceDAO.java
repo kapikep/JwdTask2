@@ -34,5 +34,4 @@ public class XMLApplianceDAO implements ApplianceDAO {
         return applianceJaxbObject.getApplianceList();
     }
 
-
 }

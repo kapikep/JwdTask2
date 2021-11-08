@@ -11,8 +11,8 @@ public class Validator {
     public static boolean validate(Criteria criteria) {
 
         List<String> params = criteria.getParams();
-        String param = "";
-        String value = "";
+        String param;
+        String value;
         double valueDouble = 0.0;
         boolean validateValue;
 
@@ -32,26 +32,31 @@ public class Validator {
             try {
                 valueDouble = Double.parseDouble(value);
             } catch (NumberFormatException e) {
-
+                //continue to work with String
             }
 
-            if (params.get(0).equals("refrigerator")) {
-                validateValue = validateRefrigerator(param, valueDouble);
-            } else if ((params.get(0).equals("speaker"))) {
-                validateValue = validateSpeaker(param, valueDouble);
-            } else if ((params.get(0).equals("laptop"))) {
-                validateValue = validateLaptop(param, valueDouble);
-            }else if ((params.get(0).equals("oven"))) {
-                validateValue = validateOven(param, valueDouble);
-            }else {
-                validateValue = validateAppliance(param, valueDouble);
+            switch (params.get(0)) {
+                case "refrigerator":
+                    validateValue = validateRefrigerator(param, valueDouble);
+                    break;
+                case "speaker":
+                    validateValue = validateSpeaker(param, valueDouble);
+                    break;
+                case "laptop":
+                    validateValue = validateLaptop(param, valueDouble);
+                    break;
+                case "oven":
+                    validateValue = validateOven(param, valueDouble);
+                    break;
+                default:
+                    validateValue = validateAppliance(param, valueDouble);
+                    break;
             }
 
             if (!validateValue) {
                 return false;
             }
         }
-
         return true;
     }
 
