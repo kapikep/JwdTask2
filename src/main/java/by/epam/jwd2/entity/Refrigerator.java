@@ -3,7 +3,6 @@ package by.epam.jwd2.entity;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.Objects;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -41,17 +40,24 @@ public class Refrigerator extends Appliance {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Refrigerator)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
         Refrigerator that = (Refrigerator) o;
-        return Double.compare(that.getHeight(), getHeight()) == 0 && Double.compare(that.getWidth(), getWidth()) == 0 &&
-                Double.compare(that.getLength(), getLength()) == 0 && Double.compare(that.getWeight(), getWeight()) == 0 &&
-                Double.compare(that.getPowerConsumption(), getPowerConsumption()) == 0 && Double.compare(that.getFreezerCapacity(), getFreezerCapacity()) == 0 &&
-                Double.compare(that.getOverallCapacity(), getOverallCapacity()) == 0;
+
+        if (Double.compare(that.freezerCapacity, freezerCapacity) != 0) return false;
+        return Double.compare(that.overallCapacity, overallCapacity) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getHeight(), getWidth(), getLength(), getWeight(), getPowerConsumption(), getFreezerCapacity(), getOverallCapacity());
+        int result = super.hashCode();
+        long temp;
+        temp = Double.doubleToLongBits(freezerCapacity);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(overallCapacity);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
     }
 
     @Override

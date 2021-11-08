@@ -1,109 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="applianceJaxbObject">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="Refrigerators">
-          <xs:complexType>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="applianceJaxbObject">
+        <xs:complexType>
             <xs:sequence>
-              <xs:element maxOccurs="unbounded" name="Refrigerator">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="height" type="xs:decimal" />
-                    <xs:element name="width" type="xs:decimal" />
-                    <xs:element name="length" type="xs:decimal" />
-                    <xs:element name="weight" type="xs:decimal" />
-                    <xs:element name="powerConsumption" type="xs:decimal" />
-                    <xs:element name="freezerCapacity" type="xs:decimal" />
-                    <xs:element name="overallCapacity" type="xs:decimal" />
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
+                <xs:element name="Refrigerators">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" name="Refrigerator">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="height" type="xs:decimal"/>
+                                        <xs:element name="width" type="xs:decimal"/>
+                                        <xs:element name="length" type="xs:decimal"/>
+                                        <xs:element name="weight" type="xs:decimal"/>
+                                        <xs:element name="powerConsumption" type="xs:decimal"/>
+                                        <xs:element name="freezerCapacity" type="xs:decimal"/>
+                                        <xs:element name="overallCapacity" type="xs:decimal"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Speakers">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" name="Speaker">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="height" type="xs:decimal"/>
+                                        <xs:element name="width" type="xs:decimal"/>
+                                        <xs:element name="length" type="xs:decimal"/>
+                                        <xs:element name="weight" type="xs:decimal"/>
+                                        <xs:element name="powerConsumption" type="xs:decimal"/>
+                                        <xs:element name="numberOfSpeakers" type="xs:unsignedByte"/>
+                                        <xs:element name="frequencyRange" type="xs:decimal"/>
+                                        <xs:element name="cordLength" type="xs:decimal"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Laptops">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" name="Laptop">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="height" type="xs:decimal"/>
+                                        <xs:element name="width" type="xs:decimal"/>
+                                        <xs:element name="length" type="xs:decimal"/>
+                                        <xs:element name="weight" type="xs:decimal"/>
+                                        <xs:element name="powerConsumption" type="xs:decimal"/>
+                                        <xs:element name="batteryCapacity" type="xs:unsignedByte"/>
+                                        <xs:element name="memoryRom" type="xs:unsignedShort"/>
+                                        <xs:element name="systemMemory" type="xs:unsignedShort"/>
+                                        <xs:element name="displayInchs" type="xs:unsignedByte"/>
+                                        <xs:element name="oS" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Ovens">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" name="Oven">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="height" type="xs:decimal"/>
+                                        <xs:element name="width" type="xs:decimal"/>
+                                        <xs:element name="length" type="xs:decimal"/>
+                                        <xs:element name="weight" type="xs:decimal"/>
+                                        <xs:element name="powerConsumption" type="xs:decimal"/>
+                                        <xs:element name="type" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="VacuumCleaners">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" name="VacuumCleaner">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="height" type="xs:decimal"/>
+                                        <xs:element name="width" type="xs:decimal"/>
+                                        <xs:element name="length" type="xs:decimal"/>
+                                        <xs:element name="weight" type="xs:decimal"/>
+                                        <xs:element name="powerConsumption" type="xs:decimal"/>
+                                        <xs:element name="bagType" type="xs:string"/>
+                                        <xs:element name="filterType" type="xs:string"/>
+                                        <xs:element name="motorSpeed" type="xs:unsignedShort"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Speakers">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element maxOccurs="unbounded" name="Speaker">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="height" type="xs:decimal" />
-                    <xs:element name="width" type="xs:decimal" />
-                    <xs:element name="length" type="xs:decimal" />
-                    <xs:element name="weight" type="xs:decimal" />
-                    <xs:element name="powerConsumption" type="xs:decimal" />
-                    <xs:element name="numberOfSpeakers" type="xs:unsignedByte" />
-                    <xs:element name="frequencyRange" type="xs:decimal" />
-                    <xs:element name="cordLength" type="xs:decimal" />
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Laptops">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element maxOccurs="unbounded" name="Laptop">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="height" type="xs:decimal" />
-                    <xs:element name="width" type="xs:decimal" />
-                    <xs:element name="length" type="xs:decimal" />
-                    <xs:element name="weight" type="xs:decimal" />
-                    <xs:element name="powerConsumption" type="xs:decimal" />
-                    <xs:element name="batteryCapacity" type="xs:unsignedByte" />
-                    <xs:element name="memoryRom" type="xs:unsignedShort" />
-                    <xs:element name="systemMemory" type="xs:unsignedShort" />
-                    <xs:element name="displayInchs" type="xs:unsignedByte" />
-                    <xs:element name="oS" type="xs:string" />
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Ovens">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element maxOccurs="unbounded" name="Oven">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="height" type="xs:decimal" />
-                    <xs:element name="width" type="xs:decimal" />
-                    <xs:element name="length" type="xs:decimal" />
-                    <xs:element name="weight" type="xs:decimal" />
-                    <xs:element name="powerConsumption" type="xs:decimal" />
-                    <xs:element name="type" type="xs:string" />
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="VacuumCleaners">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element maxOccurs="unbounded" name="VacuumCleaner">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="height" type="xs:decimal" />
-                    <xs:element name="width" type="xs:decimal" />
-                    <xs:element name="length" type="xs:decimal" />
-                    <xs:element name="weight" type="xs:decimal" />
-                    <xs:element name="powerConsumption" type="xs:decimal" />
-                    <xs:element name="bagType" type="xs:string" />
-                    <xs:element name="filterType" type="xs:string" />
-                    <xs:element name="motorSpeed" type="xs:unsignedShort" />
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>

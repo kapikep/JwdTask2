@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  Criteria for finding an appliance
+ * Criteria for finding an appliance
  */
 public class Criteria {
 

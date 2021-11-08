@@ -1,6 +1,7 @@
 package by.epam.jwd2.main;
 
 import by.epam.jwd2.entity.Appliance;
+
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public class PrintConsoleInfo {
                 applianceList) {
             System.out.println(a);
         }
-      
+
         System.out.println();
     }
 }

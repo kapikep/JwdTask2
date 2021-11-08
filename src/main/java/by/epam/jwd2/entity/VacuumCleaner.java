@@ -3,12 +3,11 @@ package by.epam.jwd2.entity;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.Objects;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 
-public class VacuumCleaner extends Appliance{
+public class VacuumCleaner extends Appliance {
 
     private String bagType;
     private String filterType;
@@ -51,14 +50,23 @@ public class VacuumCleaner extends Appliance{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof VacuumCleaner)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
         VacuumCleaner that = (VacuumCleaner) o;
-        return motorSpeed == that.motorSpeed && Objects.equals(bagType, that.bagType) && Objects.equals(filterType, that.filterType);
+
+        if (motorSpeed != that.motorSpeed) return false;
+        if (bagType != null ? !bagType.equals(that.bagType) : that.bagType != null) return false;
+        return filterType != null ? filterType.equals(that.filterType) : that.filterType == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bagType, filterType, motorSpeed);
+        int result = super.hashCode();
+        result = 31 * result + (bagType != null ? bagType.hashCode() : 0);
+        result = 31 * result + (filterType != null ? filterType.hashCode() : 0);
+        result = 31 * result + motorSpeed;
+        return result;
     }
 
     @Override

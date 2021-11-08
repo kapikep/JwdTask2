@@ -71,6 +71,37 @@ public abstract class Appliance implements Serializable {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Appliance)) return false;
+
+        Appliance appliance = (Appliance) o;
+
+        if (Double.compare(appliance.height, height) != 0) return false;
+        if (Double.compare(appliance.width, width) != 0) return false;
+        if (Double.compare(appliance.length, length) != 0) return false;
+        if (Double.compare(appliance.weight, weight) != 0) return false;
+        return Double.compare(appliance.powerConsumption, powerConsumption) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        temp = Double.doubleToLongBits(height);
+        result = (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(width);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(length);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(weight);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(powerConsumption);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "height=" + height +
                 ", width=" + width +

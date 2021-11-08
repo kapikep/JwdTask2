@@ -4,7 +4,6 @@ package by.epam.jwd2.entity;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.Objects;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -72,17 +71,27 @@ public class Laptop extends Appliance {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Laptop)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
         Laptop laptop = (Laptop) o;
-        return Double.compare(laptop.getHeight(), getHeight()) == 0 && Double.compare(laptop.getWidth(), getWidth()) == 0 &&
-                Double.compare(laptop.getLength(), getLength()) == 0 && Double.compare(laptop.getWeight(), getWeight()) == 0 &&
-                Double.compare(laptop.getPowerConsumption(), getPowerConsumption()) == 0 && batteryCapacity == laptop.batteryCapacity
-                && memoryRom == laptop.memoryRom && systemMemory == laptop.systemMemory && displayInchs == laptop.displayInchs && Objects.equals(oS, laptop.oS);
+
+        if (batteryCapacity != laptop.batteryCapacity) return false;
+        if (memoryRom != laptop.memoryRom) return false;
+        if (systemMemory != laptop.systemMemory) return false;
+        if (displayInchs != laptop.displayInchs) return false;
+        return oS != null ? oS.equals(laptop.oS) : laptop.oS == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getHeight(), getWidth(), getLength(), getWeight(), getPowerConsumption(), batteryCapacity, memoryRom, systemMemory, displayInchs, oS);
+        int result = super.hashCode();
+        result = 31 * result + batteryCapacity;
+        result = 31 * result + memoryRom;
+        result = 31 * result + systemMemory;
+        result = 31 * result + displayInchs;
+        result = 31 * result + (oS != null ? oS.hashCode() : 0);
+        return result;
     }
 
     @Override

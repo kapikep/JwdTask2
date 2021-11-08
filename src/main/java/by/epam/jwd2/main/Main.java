@@ -1,8 +1,11 @@
 package by.epam.jwd2.main;
 
-import by.epam.jwd2.entity.*;
+import by.epam.jwd2.entity.Appliance;
+import by.epam.jwd2.entity.ApplianceCreator;
+import by.epam.jwd2.entity.Criteria;
 import by.epam.jwd2.service.ApplianceService;
 import by.epam.jwd2.service.ApplianceServiceImpl;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

@@ -3,12 +3,11 @@ package by.epam.jwd2.entity;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.Objects;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 
-public class Oven extends Appliance{
+public class Oven extends Appliance {
 
     private String type;
 
@@ -31,21 +30,24 @@ public class Oven extends Appliance{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Oven)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
         Oven oven = (Oven) o;
-        return Double.compare(oven.getHeight(), getHeight()) == 0 && Double.compare(oven.getWidth(), getWidth()) == 0 &&
-                Double.compare(oven.getLength(), getLength()) == 0 && Double.compare(oven.getWeight(), getWeight()) == 0 &&
-                Double.compare(oven.getPowerConsumption(), getPowerConsumption()) == 0 && Objects.equals(getType(), oven.getType());
+
+        return type != null ? type.equals(oven.type) : oven.type == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getHeight(), getWidth(), getLength(), getWeight(), getPowerConsumption(), getType());
+        int result = super.hashCode();
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        return result;
     }
 
     @Override
     public String toString() {
-        return "oven{"+ super.toString() +
+        return "oven{" + super.toString() +
                 "type='" + type + '\'' +
                 '}';
     }
