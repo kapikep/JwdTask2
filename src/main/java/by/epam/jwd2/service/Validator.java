@@ -53,10 +53,7 @@ public class Validator {
                     validateValue = validateAppliance(param, valueDouble);
                     break;
             }
-
-            if (!validateValue) {
-                return false;
-            }
+            return validateValue;
         }
         return true;
     }

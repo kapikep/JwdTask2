@@ -23,10 +23,6 @@ public class Criteria {
         double valueDouble;
         param = param.trim();
 
-        if (value.equals("")) {
-            return;
-        }
-
         try {
             valueDouble = Double.parseDouble(value);
             params.add(param + "=" + valueDouble);
