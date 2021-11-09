@@ -19,7 +19,6 @@ public class CriteriaSearcher {
         searchDataList = initSearchData();
     }
 
-
     public List<Appliance> findAppliance(Criteria criteria) {
         List<Appliance> applianceList = applianceJaxbObject.getApplianceList();
         List<Appliance> result = new ArrayList<>();
