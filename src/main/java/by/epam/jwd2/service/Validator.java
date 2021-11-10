@@ -11,12 +11,11 @@ public class Validator {
 
     public static boolean validate(Criteria criteria) {
 
-        List<String> params = criteria.getParams();
+        List<String> params = criteria.getParamsList();
         String param = "";
         String value = "";
         double valueDouble = 0.0;
         boolean validateValue;
-
 
         if (params.isEmpty()) {
             return false;

@@ -1,17 +1,19 @@
 package by.epam.jwd2.entity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Criteria for finding an appliance
  */
 public class Criteria {
 
-    private List<String> params = new ArrayList<>();
+    private List<String> paramsList = new ArrayList<>();
 
     public Criteria(String applianceName) {
-        params.add(applianceName);
+        paramsList.add(applianceName);
     }
 
     /**
@@ -25,13 +27,13 @@ public class Criteria {
 
         try {
             valueDouble = Double.parseDouble(value);
-            params.add(param + "=" + valueDouble);
+            paramsList.add(param + "=" + valueDouble);
         } catch (NumberFormatException e) {
-            params.add(param + "=" + value);
+            paramsList.add(param + "=" + value);
         }
     }
 
-    public List<String> getParams() {
-        return params;
+    public List<String> getParamsList() {
+        return paramsList;
     }
 }

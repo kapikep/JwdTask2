@@ -19,7 +19,6 @@ public class CriteriaSearcher {
         searchDataList = initSearchData();
     }
 
-
     public List<Appliance> findAppliance(Criteria criteria) {
         List<Appliance> applianceList = applianceJaxbObject.getApplianceList();
         List<Appliance> result = new ArrayList<>();
@@ -29,7 +28,7 @@ public class CriteriaSearcher {
 
             fullMatch = true;
 
-            for (String s : criteria.getParams()) {
+            for (String s : criteria.getParamsList()) {
 
                 if (!searchDataList.get(i).contains(s)) {
                     fullMatch = false;
@@ -50,6 +49,7 @@ public class CriteriaSearcher {
     private List<String> initSearchData() {
         List<Appliance> applianceList = applianceJaxbObject.getApplianceList();
         List<String> result = new ArrayList<>();
+
         for (Appliance a :
                 applianceList) {
             result.add(a.toString());
